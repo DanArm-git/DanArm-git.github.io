@@ -1,14 +1,16 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     /*background-color: burlywood;*/
     /*Asiganando una familia de fuentes para nuestro texto*/
     font-family: 'Merriweather', serif;
-    color: white;
+    color: #000000;
     font-size: 1.2rem;
     line-height: 1.3em;
-    background: url(../Imagenes/Logo.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
+    margin:0;
 }
 
 h1 {
@@ -58,38 +60,59 @@ p {
     font-size: 1.4em;
    
 }
-
-,.navigation{
-    width: 100%;
-    margin-top: 1rem;
+.menu-icon {
+    display: none;
 }
 
-
-.navigation ul{
+.navigation ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-    .navigation ul li{ /*Cada uno de los elementos tenga un despligue en lista*/
+
+    .navigation ul li {
         display: inline-block;
     }
 
-    .navigation ul li a{ /*Hacemos que los elementos se vean en bloque*/
-        display: block;
-        padding: 0.5 rem 1rem;
-        transition: all 0.9s linear;
-        border-radius: 7px;
-    }
-
-        .navigation ul li a:hover {
-            background: #808080;
+        .navigation ul li a {
+            display: block;
+            padding: 0.5rem 1rem;
+            transition: all 0.4s linear;
+            border-radius: 5px;
         }
 
-.main{
-    padding-top: 8rem;
+            .navigation ul li a:hover {
+                background: #4a4a4a;
+            }
 
+.main {
+    padding-top: 12rem;
+}
+/*Boton de ir arriba*/
+
+#button-up {
+    width: 40px;
+    height: 40px;
+    background: #334443;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    cursor: pointer;
+    border: 4px solid transparent;
+    transition: all 300ms ease;
+    transform: scale(0);
 }
 
+    #button-up:hover {
+        transform: scale(1.1);
+        border-color: rgba(0,0,0,0.1);
+    }
 
 .footer {
     color: white;
@@ -106,23 +129,40 @@ p {
 }
 
 @media screen and (max-width:776px) {
-    
-   
-        .navigation ul li{ /*Cada uno de los elementos tenga un despligue en lista*/
-            display: block;
-        }
-    
-        .navigation ul li a{ /*Hacemos que los elementos se vean en bloque*/
-            display: block;
-            padding: 0.5 rem 0;
-            transition: all 0.6s linear;
-            border-radius: 5px;
-        }
-    
-             .navigation ul li a:hover{
-                 background: #289672;
-             }
 
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navigation {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+        .navigation ul {
+            display: none;
+        }
+
+            .navigation ul.show {
+                display: block;
+            }
+
+            .navigation ul li {
+                display: block;
+            }
+
+                .navigation ul li a {
+                    display: block;
+                    padding: 0.5rem 0;
+                    transition: all 0.4s linear;
+                    border-radius: 5px;
+                }
+
+                    .navigation ul li a:hover {
+                        background: #4a4a4a;
+                    }
 }
 
 .footer-container{
